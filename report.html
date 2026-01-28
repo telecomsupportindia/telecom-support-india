@@ -116,13 +116,13 @@
         <h2>Personal Details</h2>
 
         <label>Full Name</label>
-        <input type="text" required>
+        <input type="text" name="full_name" required>
 
         <label>Mobile Number</label>
-        <input type="tel" required>
+        <input type="tel" name="mobile" required>
 
         <label>Email Address *</label>
-        <input type="email" required>
+        <input type="email" name="email" required>
         <div class="mandatory">
             The registered email address will be used solely for official communication.
         </div>
@@ -135,7 +135,7 @@
         <h2>Network Details</h2>
 
         <label>Telecom Service Provider</label>
-        <select required>
+        <select name="operator" required>
             <option value="">Select</option>
             <option>Jio</option>
             <option>Airtel</option>
@@ -144,7 +144,7 @@
         </select>
 
         <label>Nature of Issue</label>
-        <select required>
+        <select name="issue_type" required>
             <option value="">Select</option>
             <option>No Signal / Poor Signal</option>
             <option>Call Drops</option>
@@ -159,35 +159,35 @@
         <h2>Location Details</h2>
 
         <label>State</label>
-        <input type="text" required>
+        <input name="state" required>
 
         <label>City / District</label>
-        <input type="text" required>
+        <input name="city" required>
 
         <label>Area / Locality</label>
-        <input type="text">
+        <input name="area">
 
         <label>Pincode</label>
-        <input type="text">
+        <input name="pincode">
     </div>
 
     <div class="section">
         <h2>Prior Complaint Status</h2>
 
         <label>Have you reported this issue to your telecom service provider?</label>
-        <select>
-            <option>No</option>
-            <option>Yes</option>
-        </select>
+<select name="reported_to_operator">
+  <option>No</option>
+  <option>Yes</option>
+</select>
 
-        <label>Upload proof (optional)</label>
-        <input type="file">
+<label>Upload proof (optional)</label>
+<input type="file">
 
-        <label>Have you reported this issue to any authority or grievance portal?</label>
-        <select>
-            <option>No</option>
-            <option>Yes</option>
-        </select>
+<label>Have you reported this issue to any authority?</label>
+<select name="reported_to_authority">
+  <option>No</option>
+  <option>Yes</option>
+</select>
 
         <label>Upload proof (optional)</label>
         <input type="file">
@@ -196,7 +196,7 @@
     <div class="section">
         <h2>Brief Description of the Issue (Optional)</h2>
 
-        <textarea rows="5" maxlength="800"></textarea>
+        <textarea name="description" rows="5" maxlength="800"></textarea>
         <div class="note">
             You may describe how this issue is affecting your work, business, studies, or daily activities.
         </div>
@@ -208,7 +208,7 @@
         Submissions are collected for documentation and evaluation purposes only.
     </div>
 
-    <form action="submitted.html">
+    <form id="complaintForm" onsubmit="submitComplaint(event); return false;">
         <button class="submit-btn" type="submit">Submit Complaint</button>
     </form>
 
@@ -220,6 +220,40 @@
         and pilot phase. It does not replace official grievance mechanisms.
     </p>
 </footer>
+<script>
+async function submitComplaint(event) {
+alert("Submit clicked ✅");
+  event.preventDefault();
 
+  const form = document.getElementById("complaintForm");
+
+  const data = {
+    full_name: form.querySelector('[name="full_name"]')?.value || "",
+    mobile: form.querySelector('[name="mobile"]')?.value || "",
+    email: form.querySelector('[name="email"]')?.value || "",
+    operator: form.querySelector('[name="operator"]')?.value || "",
+    issue_type: form.querySelector('[name="issue_type"]')?.value || "",
+    state: form.querySelector('[name="state"]')?.value || "",
+    city: form.querySelector('[name="city"]')?.value || "",
+    area: form.querySelector('[name="area"]')?.value || "",
+    pincode: form.querySelector('[name="pincode"]')?.value || "",
+    description: form.querySelector('[name="description"]')?.value || ""
+  };
+
+  try {
+  await fetch("https://script.google.com/macros/s/AKfycbzHPzy8FluT2D6EDXTKjGyEuzFkKp6FQhMvOosaT6j8wxTpJs-AYXF9NYj3NLfSg_sP/exec", {
+    method: "POST",
+    mode: "no-cors",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data)
+  });
+
+  setTimeout(() => { window.location.href = "submitted.html"; }, 500);
+
+} catch (err) {
+  window.location.href = "submitted.html";
+}
+
+</script>
 </body>
 </html>
