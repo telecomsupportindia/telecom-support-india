@@ -1,165 +1,400 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Telecom Support India</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #f5f6f7;
-            color: #222;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Telecom Support India | Citizen & Operator Portal</title>
 
-        header {
-            background-color: #0b3c5d;
-            color: #ffffff;
-            padding: 16px 20px;
-        }
+  <style>
+    body{
+      font-family: Arial, sans-serif;
+      margin:0;
+      padding:0;
+      background:#f5f6fa;
+      color:#1a1a1a;
+    }
 
-        header .title {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
+    header{
+      background:#0b3d91;
+      color:white;
+      padding:18px 14px;
+      text-align:center;
+    }
 
-        header .icon {
-            font-size: 28px;
-        }
+    header h1{
+      margin:0;
+      font-size:22px;
+      letter-spacing:0.3px;
+    }
 
-        header h1 {
-            font-size: 22px;
-            margin: 0;
-        }
+    header p{
+      margin:6px 0 0;
+      font-size:13px;
+      opacity:0.9;
+    }
 
-        header .tagline {
-            font-size: 14px;
-            font-weight: bold;
-            margin: 4px 0 2px;
-        }
+    .topBar{
+      background:#ffffff;
+      border-bottom:1px solid #e4e7ef;
+      padding:10px 14px;
+      text-align:center;
+      font-size:12px;
+      color:#444;
+    }
 
-        header .subtitle {
-            font-size: 12px;
-            opacity: 0.85;
-            margin: 0;
-        }
+    .container{
+      max-width:980px;
+      margin:18px auto;
+      padding:14px;
+    }
 
-        main {
-            padding: 20px;
-            max-width: 900px;
-            margin: auto;
-        }
+    .hero{
+      background:white;
+      border-radius:14px;
+      padding:18px;
+      box-shadow:0 2px 10px rgba(0,0,0,0.08);
+    }
 
-        .pilot {
-            background-color: #fff3cd;
-            border-left: 5px solid #ffbf00;
-            padding: 12px 15px;
-            margin-bottom: 20px;
-            font-size: 14px;
-        }
+    .badge{
+      display:inline-block;
+      background:#fff3cd;
+      border:1px solid #ffeeba;
+      color:#856404;
+      padding:6px 10px;
+      border-radius:10px;
+      font-size:12px;
+      margin-bottom:10px;
+      font-weight:600;
+    }
 
-        .intro {
-            background-color: #ffffff;
-            padding: 20px;
-            border: 1px solid #ddd;
-            margin-bottom: 20px;
-        }
+    .hero h2{
+      margin:8px 0 8px;
+      font-size:18px;
+      color:#0b3d91;
+    }
 
-        .intro p {
-            font-size: 15px;
-            line-height: 1.5;
-            margin: 0 0 12px;
-        }
+    .hero p{
+      margin:6px 0;
+      font-size:14px;
+      line-height:1.5;
+      color:#333;
+    }
 
-        .operators {
-            font-weight: bold;
-            margin-top: 10px;
-        }
+    .note{
+      margin-top:10px;
+      font-size:12px;
+      color:#666;
+      line-height:1.4;
+    }
 
-        .action {
-            margin-top: 20px;
-        }
+    .grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:14px;
+      margin-top:16px;
+    }
 
-        .action a {
-            display: inline-block;
-            background-color: #0b3c5d;
-            color: #ffffff;
-            text-decoration: none;
-            padding: 12px 20px;
-            font-size: 16px;
-            border-radius: 3px;
-        }
+    .card{
+      background:white;
+      border-radius:14px;
+      padding:16px;
+      box-shadow:0 2px 10px rgba(0,0,0,0.08);
+      border:1px solid #eef1f7;
+    }
 
-        .action a:hover {
-            background-color: #092f49;
-        }
+    .card h3{
+      margin:0 0 6px;
+      color:#0b3d91;
+      font-size:16px;
+    }
 
-        footer {
-            background-color: #e9ecef;
-            padding: 12px 20px;
-            font-size: 12px;
-            color: #444;
-            margin-top: 40px;
-        }
+    .card p{
+      margin:0 0 12px;
+      font-size:13px;
+      color:#444;
+      line-height:1.4;
+    }
 
-        footer p {
-            margin: 4px 0;
-        }
-    </style>
+    .btn{
+      display:block;
+      width:100%;
+      text-align:center;
+      background:#0b3d91;
+      color:white;
+      text-decoration:none;
+      padding:12px 14px;
+      border-radius:12px;
+      font-weight:700;
+      font-size:15px;
+      border:none;
+      cursor:pointer;
+    }
+
+    .btn:active{ opacity:0.9; }
+
+    .btnSecondary{
+      display:block;
+      width:100%;
+      text-align:center;
+      background:#ffffff;
+      color:#0b3d91;
+      text-decoration:none;
+      padding:12px 14px;
+      border-radius:12px;
+      font-weight:700;
+      font-size:15px;
+      border:2px solid #0b3d91;
+      cursor:pointer;
+    }
+
+    .fieldLabel{
+      font-size:13px;
+      font-weight:600;
+      margin:10px 0 6px;
+      color:#333;
+    }
+
+    input{
+      width:100%;
+      padding:10px;
+      border:1px solid #cfd3dc;
+      border-radius:10px;
+      font-size:14px;
+      box-sizing:border-box;
+      background:white;
+    }
+
+    .miniLinks{
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      margin-top:10px;
+      font-size:12px;
+    }
+
+    .miniLinks a{
+      color:#0b3d91;
+      text-decoration:none;
+      font-weight:600;
+    }
+
+    footer{
+      text-align:center;
+      padding:18px 12px;
+      font-size:12px;
+      color:#666;
+    }
+
+    /* desktop */
+    @media(min-width: 820px){
+      .grid{
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+
+    /* ✅ Popup Modal */
+    .modalOverlay{
+      position: fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background: rgba(0,0,0,0.45);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      z-index:9999;
+      padding:16px;
+      box-sizing:border-box;
+    }
+
+    .modalBox{
+      background:white;
+      width:100%;
+      max-width:420px;
+      border-radius:14px;
+      padding:16px;
+      box-shadow:0 2px 14px rgba(0,0,0,0.18);
+    }
+
+    .modalBox h4{
+      margin:0 0 8px;
+      font-size:16px;
+      color:#0b3d91;
+    }
+
+    .modalBox p{
+      margin:0 0 12px;
+      font-size:13px;
+      color:#333;
+      line-height:1.4;
+    }
+
+    .modalActions{
+      display:flex;
+      gap:10px;
+    }
+
+    .modalActions button{
+      flex:1;
+    }
+
+    .btnGrey{
+      background:#e8ebf3;
+      color:#222;
+    }
+
+    .resultBox{
+      margin-top:10px;
+      padding:10px;
+      border-radius:12px;
+      background:#eef4ff;
+      border:1px solid #d6e4ff;
+      font-size:13px;
+      color:#0b3d91;
+      display:none;
+    }
+  </style>
 </head>
+
 <body>
 
-<header>
-    <div class="title">
-        <div class="icon">📡</div>
-        <div>
-            <h1>Telecom Support India</h1>
-            <div class="tagline">Empowering Citizens for a Digital India</div>
-            <p class="subtitle">
-                A Public Grievance Reporting Platform for Telecom Network Issues
-            </p>
-        </div>
+  <header>
+    <h1>Telecom Support India</h1>
+    <p>Empowering citizens for Digital India through connectivity</p>
+  </header>
+
+  <div class="topBar">
+    🇮🇳 Public Support Portal (Pilot Project) • Complaint Ticketing • Email Confirmation • Ticket Tracking (Coming)
+  </div>
+
+  <div class="container">
+
+    <div class="hero">
+      <div class="badge">⚠️ Pilot Phase (Beta)</div>
+      <h2>National Connectivity Grievance Support Platform</h2>
+      <p>
+        File telecom complaints easily and receive a Ticket ID for tracking.
+        A secure operator/professional login portal is planned for technical validation and resolution workflow.
+      </p>
+      <p class="note">
+        <b>Disclaimer:</b> This is a pilot project for evaluation and public feedback only.
+        It does not replace official grievance mechanisms at this stage.
+      </p>
     </div>
-</header>
 
-<main>
+    <div class="grid">
 
-    <div class="pilot">
-        <strong>Pilot Phase Notice:</strong>
-        This platform is currently under development and operating in a pilot phase.
-        Submissions are collected for documentation and evaluation purposes only.
-    </div>
-
-    <div class="intro">
+      <!-- ✅ Citizen Complaint -->
+      <div class="card">
+        <h3>📩 Citizen Complaint (No Login Required)</h3>
         <p>
-            Telecom Support India enables citizens to report issues related to mobile
-            network coverage, call connectivity, and data services across India.
+          Report call drops, weak signal, slow internet, no internet, and indoor coverage issues.
+          You will receive a Ticket ID via email.
+        </p>
+        <a class="btnSecondary" href="report.html">File a Complaint</a>
+      </div>
+
+      <!-- ✅ Track Ticket (UI only for now) -->
+      <div class="card">
+        <h3>🔍 Track Complaint Status</h3>
+        <p>
+          Enter your Ticket ID to check status (NEW / IN PROGRESS / RESOLVED).
         </p>
 
-        <div class="operators">
-            Supported Service Providers: Jio | Airtel | Vodafone Idea (VI) | BSNL
+        <div class="fieldLabel">Ticket ID</div>
+        <input id="ticketInput" type="text" placeholder="Example: TSI-20260128-875" />
+
+        <div style="height:10px;"></div>
+        <button class="btnSecondary" onclick="trackTicket()">Check Status</button>
+
+        <div id="resultBox" class="resultBox"></div>
+
+        <div class="note">
+          ✅ Tracking system is being activated. Please check again shortly.
+        </div>
+      </div>
+
+      <!-- ✅ Operator / Professional Login -->
+      <div class="card">
+        <h3>🛡️ Telecom Professionals / Operators</h3>
+        <p>
+          Login required for technical tools, KPI/KQI logs, interference analysis, and resolution workflow.
+        </p>
+
+        <div class="fieldLabel">Login (Email / Username)</div>
+        <input type="text" placeholder="Enter username or email" />
+
+        <div class="fieldLabel">Password</div>
+        <input type="password" placeholder="Enter password" />
+
+        <button class="btn" onclick="openModal()">Login</button>
+
+        <div class="miniLinks">
+          <a href="#" onclick="openSignup(); return false;">Sign Up</a>
+          <a href="#" onclick="openForgot(); return false;">Forgot Password?</a>
         </div>
 
-        <div class="action">
-            <a href="report.html">Report a Network Issue</a>
+        <div class="note">
+          🔒 Access is restricted during pilot evaluation.
         </div>
+      </div>
+
     </div>
 
-</main>
+  </div>
 
-<footer>
-    <p>
-        Disclaimer: This is an independent initiative operating in a development and
-        pilot phase. It does not replace official grievance mechanisms.
-    </p>
-    <p>
-        Privacy Note: Communication is carried out via registered email only.
-    </p>
-</footer>
+  <footer>
+    © Telecom Support India (Pilot Project) • Built for citizen connectivity awareness & reporting
+  </footer>
+
+  <!-- ✅ Popup Modal -->
+  <div class="modalOverlay" id="modalOverlay">
+    <div class="modalBox">
+      <h4>Professional Portal Access</h4>
+      <p>
+        This module is currently under development.
+        Please register to request access to operator/professional resources.
+      </p>
+      <div class="modalActions">
+        <button class="btn btnGrey" onclick="closeModal()">Close</button>
+        <button class="btn" onclick="openSignup()">Register</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openModal(){
+      document.getElementById("modalOverlay").style.display = "flex";
+    }
+    function closeModal(){
+      document.getElementById("modalOverlay").style.display = "none";
+    }
+    function openSignup(){
+      alert("✅ Registration module will be enabled soon.\n\nFor pilot access, please contact Telecom Support India admin.");
+      closeModal();
+    }
+    function openForgot(){
+      alert("✅ Password recovery will be enabled soon.\n\nFor pilot access, please contact Telecom Support India admin.");
+      closeModal();
+    }
+
+    function trackTicket(){
+      const t = document.getElementById("ticketInput").value.trim();
+      const box = document.getElementById("resultBox");
+
+      if(!t){
+        alert("Please enter a Ticket ID.");
+        return;
+      }
+
+      // UI-only placeholder
+      box.style.display = "block";
+      box.innerHTML =
+        "✅ Ticket ID received: <b>" + t + "</b><br>" +
+        "Tracking module will be activated shortly. Please try again later.";
+    }
+  </script>
 
 </body>
 </html>
-
-
-
