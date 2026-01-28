@@ -139,7 +139,10 @@
 
       <h2>Report a Network Issue</h2>
 
-      <form id="complaintForm" onsubmit="submitComplaint(event); return false;">
+      <!-- ✅ DIRECT SUBMIT TO APPS SCRIPT (BEST METHOD) -->
+      <form id="complaintForm"
+        action="https://script.google.com/macros/s/AKfycbyG8Bxi0FYl8b0K0RH5K-WHTqwGy42FEeXKB31Qwb2g-Z2l1g-hyHTzyWb1SW4SsnY8xw/exec"
+        method="POST">
 
         <div class="section">
           <h2>Complainant Details</h2>
@@ -215,6 +218,7 @@
           </select>
         </div>
 
+        <!-- ✅ Sticky submit button -->
         <div class="stickyBar">
           <button class="btn" type="submit">Submit Complaint</button>
         </div>
@@ -223,51 +227,5 @@
 
     </div>
   </div>
-
-  <script>
-    async function submitComplaint(event) {
-      event.preventDefault();
-
-      const form = document.getElementById("complaintForm");
-
-      const data = {
-        full_name: form.querySelector('[name="full_name"]')?.value || "",
-        mobile: form.querySelector('[name="mobile"]')?.value || "",
-        email: form.querySelector('[name="email"]')?.value || "",
-        operator: form.querySelector('[name="operator"]')?.value || "",
-        issue_type: form.querySelector('[name="issue_type"]')?.value || "",
-        state: form.querySelector('[name="state"]')?.value || "",
-        city: form.querySelector('[name="city"]')?.value || "",
-        area: form.querySelector('[name="area"]')?.value || "",
-        pincode: form.querySelector('[name="pincode"]')?.value || "",
-        description: form.querySelector('[name="description"]')?.value || "",
-        reported_to_operator: form.querySelector('[name="reported_to_operator"]')?.value || "No",
-        reported_to_authority: form.querySelector('[name="reported_to_authority"]')?.value || "No"
-      };
-
-      try {
-        const f = document.createElement("form");
-        f.method = "POST";
-
-        // ✅ FINAL NEW APPS SCRIPT URL (CONNECTED TO NEW SHEET)
-        f.action = "https://script.google.com/macros/s/AKfycbyG8Bxi0FYl8b0K0RH5K-WHTqwGy42FEeXKB31Qwb2g-Z2l1g-hyHTzyWb1SW4SsnY8xw/exec";
-
-        for (const k in data) {
-          const i = document.createElement("input");
-          i.type = "hidden";
-          i.name = k;
-          i.value = data[k];
-          f.appendChild(i);
-        }
-
-        document.body.appendChild(f);
-        f.submit();
-
-        setTimeout(() => { window.location.href = "submitted.html"; }, 1200);
-      } catch (err) {
-        window.location.href = "submitted.html";
-      }
-    }
-  </script>
 </body>
 </html>
