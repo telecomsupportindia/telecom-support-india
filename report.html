@@ -6,118 +6,68 @@
   <title>Telecom Support India - Report Issue</title>
 
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f6fa;
-      margin: 0;
-      padding: 0;
-    }
+    body { font-family: Arial, sans-serif; background:#f5f6fa; margin:0; padding:0; }
+    header { background:#0b3d91; color:white; padding:18px 14px; text-align:center; }
+    header h1 { margin:0; font-size:22px; }
+    header p { margin:6px 0 0; font-size:13px; opacity:0.9; }
 
-    header {
-      background: #0b3d91;
-      color: white;
-      padding: 18px 14px;
-      text-align: center;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 22px;
-    }
-
-    header p {
-      margin: 6px 0 0;
-      font-size: 13px;
-      opacity: 0.9;
-    }
-
-    .container {
-      max-width: 820px;
-      margin: 16px auto;
-      padding: 14px;
-    }
-
-    .card {
-      background: #fff;
-      border-radius: 12px;
-      padding: 16px 16px 120px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-    }
+    .container { max-width:820px; margin:16px auto; padding:14px; }
+    .card { background:#fff; border-radius:12px; padding:16px 16px 120px; box-shadow:0 2px 10px rgba(0,0,0,0.08); }
 
     .disclaimer {
-      background: #fff3cd;
-      border: 1px solid #ffeeba;
-      padding: 12px;
-      border-radius: 10px;
-      margin-bottom: 12px;
-      font-size: 13px;
-      color: #856404;
+      background:#fff3cd;
+      border:1px solid #ffeeba;
+      padding:12px;
+      border-radius:10px;
+      margin-bottom:12px;
+      font-size:13px;
+      color:#856404;
     }
 
-    h2 {
-      margin: 8px 0 12px;
-      font-size: 18px;
-      color: #0b3d91;
-    }
+    h2 { margin:8px 0 12px; font-size:18px; color:#0b3d91; }
 
-    label {
-      display: block;
-      margin: 12px 0 6px;
-      font-weight: 600;
-    }
+    label { display:block; margin:12px 0 6px; font-weight:600; }
 
     input, select, textarea {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #cfd3dc;
-      border-radius: 10px;
-      font-size: 14px;
-      box-sizing: border-box;
-      background: white;
+      width:100%;
+      padding:10px;
+      border:1px solid #cfd3dc;
+      border-radius:10px;
+      font-size:14px;
+      box-sizing:border-box;
+      background:white;
     }
 
-    textarea {
-      resize: vertical;
-    }
+    textarea { resize: vertical; }
 
-    .section {
-      margin-top: 16px;
-      padding-top: 10px;
-      border-top: 1px solid #e7e9ef;
-    }
+    .section { margin-top:16px; padding-top:10px; border-top:1px solid #e7e9ef; }
 
-    .mandatory {
-      font-size: 12px;
-      color: #b30000;
-      margin-top: 4px;
-    }
+    .mandatory { font-size:12px; color:#b30000; margin-top:4px; }
 
     .btn {
-      display: block;
-      background: #0b3d91;
-      color: white;
-      border: none;
-      padding: 12px 16px;
-      border-radius: 10px;
-      cursor: pointer;
-      font-size: 15px;
-      width: 100%;
+      display:block;
+      background:#0b3d91;
+      color:white;
+      border:none;
+      padding:12px 16px;
+      border-radius:10px;
+      cursor:pointer;
+      font-size:15px;
+      width:100%;
     }
 
-    .btn:active {
-      opacity: 0.9;
-    }
+    .btn:active { opacity:0.9; }
 
-    .stickyBar {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background: white;
-      padding: 10px 14px;
-      box-shadow: 0 -2px 10px rgba(0,0,0,0.12);
-      box-sizing: border-box;
-      z-index: 9999;
+    .stickyBar{
+      position:fixed;
+      bottom:0;
+      left:0;
+      width:100%;
+      background:white;
+      padding:10px 14px;
+      box-shadow:0 -2px 10px rgba(0,0,0,0.12);
+      box-sizing:border-box;
+      z-index:9999;
     }
   </style>
 </head>
@@ -139,10 +89,11 @@
 
       <h2>Report a Network Issue</h2>
 
-      <!-- ✅ DIRECT SUBMIT TO APPS SCRIPT (BEST METHOD) -->
-      <form id="complaintForm"
-        action="https://script.google.com/macros/s/AKfycbyG8Bxi0FYl8b0K0RH5K-WHTqwGy42FEeXKB31Qwb2g-Z2l1g-hyHTzyWb1SW4SsnY8xw/exec"
-        method="POST">
+      <form
+        id="complaintForm"
+        action="https://script.google.com/macros/s/AKfycbwokKxN05meSZ7-ow4RWeaB6S1ZCUhKnJP0nn4ShQb2eJS3nlRmDFZ8cRnFGMWU2XmfTg/exec"
+        method="POST"
+      >
 
         <div class="section">
           <h2>Complainant Details</h2>
@@ -218,11 +169,9 @@
           </select>
         </div>
 
-        <!-- ✅ Sticky submit button -->
         <div class="stickyBar">
           <button class="btn" type="submit">Submit Complaint</button>
         </div>
-
       </form>
 
     </div>
