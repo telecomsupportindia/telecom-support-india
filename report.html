@@ -94,4 +94,183 @@
     }
 
     /* ✅ Submit button style */
-    .
+    .btn {
+      display: block;
+      background: #0b3d91;
+      color: white;
+      border: none;
+      padding: 12px 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 15px;
+      width: 100%;
+    }
+
+    .btn:active {
+      opacity: 0.9;
+    }
+
+    /* ✅ Sticky submit bar (always visible on WhatsApp/Chrome) */
+    .stickyBar{
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: white;
+      padding: 10px 14px;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.12);
+      box-sizing: border-box;
+      z-index: 9999;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Telecom Support India</h1>
+    <p>Empowering citizens for Digital India through connectivity</p>
+  </header>
+
+  <div class="container">
+    <div class="card">
+
+      <div class="disclaimer">
+        <b>Disclaimer (Pilot Phase):</b>
+        This website is currently under development and is intended for documentation, evaluation, and public feedback purposes only.
+        It does not replace official grievance systems at this stage.
+      </div>
+
+      <h2>Report a Network Issue</h2>
+
+      <form id="complaintForm" onsubmit="submitComplaint(event); return false;">
+
+        <div class="section">
+          <h2>Complainant Details</h2>
+
+          <label>Full Name</label>
+          <input type="text" name="full_name" required />
+
+          <label>Mobile Number</label>
+          <input type="tel" name="mobile" required />
+
+          <label>Email</label>
+          <input type="email" name="email" required />
+          <div class="mandatory">Reply/confirmation will be delivered to your email. Your email will not be shared publicly.</div>
+        </div>
+
+        <div class="section">
+          <h2>Issue Details</h2>
+
+          <label>Telecom Service Provider</label>
+          <select name="operator" required>
+            <option value="">Select</option>
+            <option>Jio</option>
+            <option>Airtel</option>
+            <option>Vodafone Idea (VI)</option>
+            <option>BSNL</option>
+          </select>
+
+          <label>Nature of Issue</label>
+          <select name="issue_type" required>
+            <option value="">Select</option>
+            <option>No Network / Weak Signal</option>
+            <option>Call Drops</option>
+            <option>Call Not Connecting</option>
+            <option>Slow Internet</option>
+            <option>No Internet</option>
+            <option>Indoor Coverage Issue</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="section">
+          <h2>Location Details</h2>
+
+          <label>State</label>
+          <input type="text" name="state" required />
+
+          <label>City / District</label>
+          <input type="text" name="city" required />
+
+          <label>Area / Locality</label>
+          <input type="text" name="area" />
+
+          <label>Pincode</label>
+          <input type="text" name="pincode" />
+        </div>
+
+        <div class="section">
+          <h2>Additional Information</h2>
+
+          <label>Describe your issue (optional)</label>
+          <textarea name="description" rows="5" maxlength="800"></textarea>
+
+          <label>Have you reported this issue to your telecom service provider?</label>
+          <select name="reported_to_operator">
+            <option>No</option>
+            <option>Yes</option>
+          </select>
+
+          <label>Have you reported this issue to any authority?</label>
+          <select name="reported_to_authority">
+            <option>No</option>
+            <option>Yes</option>
+          </select>
+        </div>
+
+        <!-- ✅ Sticky submit bar -->
+        <div class="stickyBar">
+          <button class="btn" type="submit">Submit Complaint</button>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+  <script>
+    async function submitComplaint(event) {
+      event.preventDefault();
+
+      const form = document.getElementById("complaintForm");
+
+      const data = {
+        full_name: form.querySelector('[name="full_name"]')?.value || "",
+        mobile: form.querySelector('[name="mobile"]')?.value || "",
+        email: form.querySelector('[name="email"]')?.value || "",
+        operator: form.querySelector('[name="operator"]')?.value || "",
+        issue_type: form.querySelector('[name="issue_type"]')?.value || "",
+        state: form.querySelector('[name="state"]')?.value || "",
+        city: form.querySelector('[name="city"]')?.value || "",
+        area: form.querySelector('[name="area"]')?.value || "",
+        pincode: form.querySelector('[name="pincode"]')?.value || "",
+        description: form.querySelector('[name="description"]')?.value || "",
+        reported_to_operator: form.querySelector('[name="reported_to_operator"]')?.value || "No",
+        reported_to_authority: form.querySelector('[name="reported_to_authority"]')?.value || "No"
+      };
+
+      try {
+        // ✅ GitHub Pages compatible submit (no CORS issues)
+        const f = document.createElement("form");
+        f.method = "POST";
+        f.action = "https://script.google.com/macros/s/AKfycbzttdD76bU9mtjbPB8bftIIDR-jyEKUSKt-uhq1qq0-LN5_59Vg0PIYu4jqnnAyGgA/exec";
+
+        for (const k in data) {
+          const i = document.createElement("input");
+          i.type = "hidden";
+          i.name = k;
+          i.value = data[k];
+          f.appendChild(i);
+        }
+
+        document.body.appendChild(f);
+        f.submit();
+
+        setTimeout(() => { window.location.href = "submitted.html"; }, 1200);
+      } catch (err) {
+        window.location.href = "submitted.html";
+      }
+    }
+  </script>
+</body>
+</html>
