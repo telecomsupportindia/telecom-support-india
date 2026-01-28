@@ -1,259 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Report a Network Issue | Telecom Support India</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #f5f6f7;
-            color: #222;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Telecom Support India - Report Issue</title>
+  <style>
+    body { font-family: Arial, sans-serif; background:#f5f6fa; margin:0; padding:0; }
+    header { background:#0b3d91; color:white; padding:18px 14px; text-align:center; }
+    header h1 { margin:0; font-size:22px; }
+    header p { margin:6px 0 0; font-size:13px; opacity:0.9; }
 
-        header {
-            background-color: #0b3c5d;
-            color: #ffffff;
-            padding: 16px 20px;
-        }
+    .container { max-width:820px; margin:16px auto; padding:14px; }
+    .card { background:#fff; border-radius:12px; padding:16px; box-shadow:0 2px 10px rgba(0,0,0,0.08); }
 
-        header h1 {
-            margin: 0;
-            font-size: 20px;
-        }
+    .disclaimer {
+      background:#fff3cd;
+      border:1px solid #ffeeba;
+      padding:12px;
+      border-radius:10px;
+      margin-bottom:12px;
+      font-size:13px;
+      color:#856404;
+    }
 
-        main {
-            max-width: 900px;
-            margin: auto;
-            padding: 20px;
-        }
+    h2 { margin:8px 0 12px; font-size:18px; color:#0b3d91; }
 
-        .section {
-            background-color: #ffffff;
-            padding: 20px;
-            margin-bottom: 20px;
-            border: 1px solid #ddd;
-        }
+    label { display:block; margin:12px 0 6px; font-weight:600; }
+    input, select, textarea {
+      width:100%;
+      padding:10px;
+      border:1px solid #cfd3dc;
+      border-radius:10px;
+      font-size:14px;
+      box-sizing:border-box;
+      background:white;
+    }
+    textarea { resize: vertical; }
 
-        .section h2 {
-            font-size: 17px;
-            margin-top: 0;
-        }
+    .section { margin-top:16px; padding-top:10px; border-top:1px solid #e7e9ef; }
 
-        label {
-            display: block;
-            margin-top: 12px;
-            font-weight: bold;
-            font-size: 14px;
-        }
+    .note { font-size:12px; color:#555; margin-top:6px; }
+    .mandatory { font-size:12px; color:#b30000; margin-top:4px; }
 
-        input, select, textarea {
-            width: 100%;
-            padding: 8px;
-            margin-top: 6px;
-            font-size: 14px;
-            border: 1px solid #ccc;
-            border-radius: 2px;
-        }
-
-        textarea {
-            resize: vertical;
-        }
-
-        .note {
-            font-size: 12px;
-            color: #555;
-            margin-top: 4px;
-        }
-
-        .mandatory {
-            color: red;
-            font-size: 12px;
-            margin-top: 4px;
-        }
-
-        .pilot {
-            background-color: #fff3cd;
-            border-left: 5px solid #ffbf00;
-            padding: 12px 15px;
-            margin-bottom: 20px;
-            font-size: 14px;
-        }
-
-        .submit-btn {
-            background-color: #0b3c5d;
-            color: #ffffff;
-            padding: 12px 20px;
-            font-size: 16px;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
-        }
-
-        .submit-btn:hover {
-            background-color: #092f49;
-        }
-
-        footer {
-            background-color: #e9ecef;
-            padding: 12px 20px;
-            font-size: 12px;
-            color: #444;
-            margin-top: 40px;
-        }
-    </style>
+    .btn {
+      background:#0b3d91;
+      color:white;
+      border:none;
+      padding:12px 16px;
+      border-radius:10px;
+      cursor:pointer;
+      font-size:15px;
+      margin-top:16px;
+      width:100%;
+    }
+    .btn:active { opacity:0.9; }
+  </style>
 </head>
+
 <body>
+  <header>
+    <h1>Telecom Support India</h1>
+    <p>Empowering citizens for Digital India through connectivity</p>
+  </header>
 
-<header>
-    <h1>Report a Network Issue</h1>
-</header>
+  <div class="container">
+    <div class="card">
 
-<main>
+      <div class="disclaimer">
+        <b>Disclaimer (Pilot Phase):</b> This website is currently under development and is intended for documentation,
+        evaluation, and public feedback purposes only. It does not replace official grievance systems at this stage.
+      </div>
 
-    <div class="section">
-        <h2>Personal Details</h2>
+      <h2>Report a Network Issue</h2>
 
-        <label>Full Name</label>
-        <input type="text" name="full_name" required>
+      <form id="complaintForm" onsubmit="submitComplaint(event); return false;">
 
-        <label>Mobile Number</label>
-        <input type="tel" name="mobile" required>
+        <div class="section">
+          <h2>Complainant Details</h2>
 
-        <label>Email Address *</label>
-        <input type="email" name="email" required>
-        <div class="mandatory">
-            The registered email address will be used solely for official communication.
+          <label>Full Name</label>
+          <input type="text" name="full_name" required />
+
+          <label>Mobile Number</label>
+          <input type="tel" name="mobile" required />
+
+          <label>Email</label>
+          <input type="email" name="email" required />
+          <div class="mandatory">Reply/confirmation will be delivered to your email. Email will not be shared publicly.</div>
         </div>
-        <div class="note">
-            Your email address will not be shared with any third party.
-        </div>
-    </div>
 
-    <div class="section">
-        <h2>Network Details</h2>
+        <div class="section">
+          <h2>Issue Details</h2>
 
-        <label>Telecom Service Provider</label>
-        <select name="operator" required>
+          <label>Telecom Service Provider</label>
+          <select name="operator" required>
             <option value="">Select</option>
             <option>Jio</option>
             <option>Airtel</option>
             <option>Vodafone Idea (VI)</option>
             <option>BSNL</option>
-        </select>
+          </select>
 
-        <label>Nature of Issue</label>
-        <select name="issue_type" required>
+          <label>Nature of Issue</label>
+          <select name="issue_type" required>
             <option value="">Select</option>
-            <option>No Signal / Poor Signal</option>
+            <option>No Network / Weak Signal</option>
             <option>Call Drops</option>
+            <option>Call Not Connecting</option>
             <option>Slow Internet</option>
-            <option>No Internet Connectivity</option>
+            <option>No Internet</option>
             <option>Indoor Coverage Issue</option>
-            <option>4G / 5G Service Issue</option>
-        </select>
-    </div>
-
-    <div class="section">
-        <h2>Location Details</h2>
-
-        <label>State</label>
-        <input name="state" required>
-
-        <label>City / District</label>
-        <input name="city" required>
-
-        <label>Area / Locality</label>
-        <input name="area">
-
-        <label>Pincode</label>
-        <input name="pincode">
-    </div>
-
-    <div class="section">
-        <h2>Prior Complaint Status</h2>
-
-        <label>Have you reported this issue to your telecom service provider?</label>
-<select name="reported_to_operator">
-  <option>No</option>
-  <option>Yes</option>
-</select>
-
-<label>Upload proof (optional)</label>
-<input type="file">
-
-<label>Have you reported this issue to any authority?</label>
-<select name="reported_to_authority">
-  <option>No</option>
-  <option>Yes</option>
-</select>
-
-        <label>Upload proof (optional)</label>
-        <input type="file">
-    </div>
-
-    <div class="section">
-        <h2>Brief Description of the Issue (Optional)</h2>
-
-        <textarea name="description" rows="5" maxlength="800"></textarea>
-        <div class="note">
-            You may describe how this issue is affecting your work, business, studies, or daily activities.
+            <option>Other</option>
+          </select>
         </div>
+
+        <div class="section">
+          <h2>Location Details</h2>
+
+          <label>State</label>
+          <input type="text" name="state" required />
+
+          <label>City / District</label>
+          <input type="text" name="city" required />
+
+          <label>Area / Locality</label>
+          <input type="text" name="area" />
+
+          <label>Pincode</label>
+          <input type="text" name="pincode" />
+        </div>
+
+        <div class="section">
+          <h2>Additional Information</h2>
+
+          <label>Describe your issue (optional)</label>
+          <textarea name="description" rows="5" maxlength="800"></textarea>
+
+          <label>Have you reported this issue to your telecom service provider?</label>
+          <select name="reported_to_operator">
+            <option>No</option>
+            <option>Yes</option>
+          </select>
+
+          <label>Have you reported this issue to any authority?</label>
+          <select name="reported_to_authority">
+            <option>No</option>
+            <option>Yes</option>
+          </select>
+        </div>
+
+        <button class="btn" type="submit">Submit Complaint</button>
+      </form>
+
     </div>
+  </div>
 
-    <div class="pilot">
-        <strong>Pilot Phase Notice:</strong>
-        This platform is currently under development and operating in a pilot phase.
-        Submissions are collected for documentation and evaluation purposes only.
-    </div>
+  <script>
+    async function submitComplaint(event) {
+      event.preventDefault();
 
-    <form id="complaintForm" onsubmit="submitComplaint(event); return false;">
-        <button class="submit-btn" type="submit">Submit Complaint</button>
-    </form>
+      const form = document.getElementById("complaintForm");
 
-</main>
+      const data = {
+        full_name: form.querySelector('[name="full_name"]')?.value || "",
+        mobile: form.querySelector('[name="mobile"]')?.value || "",
+        email: form.querySelector('[name="email"]')?.value || "",
+        operator: form.querySelector('[name="operator"]')?.value || "",
+        issue_type: form.querySelector('[name="issue_type"]')?.value || "",
+        state: form.querySelector('[name="state"]')?.value || "",
+        city: form.querySelector('[name="city"]')?.value || "",
+        area: form.querySelector('[name="area"]')?.value || "",
+        pincode: form.querySelector('[name="pincode"]')?.value || "",
+        description: form.querySelector('[name="description"]')?.value || "",
+        reported_to_operator: form.querySelector('[name="reported_to_operator"]')?.value || "No",
+        reported_to_authority: form.querySelector('[name="reported_to_authority"]')?.value || "No"
+      };
 
-<footer>
-    <p>
-        Disclaimer: This platform is an independent initiative operating in a development
-        and pilot phase. It does not replace official grievance mechanisms.
-    </p>
-</footer>
-<script>
-async function submitComplaint(event) {
-alert("Submit clicked ✅");
-  event.preventDefault();
+      try {
+        // ✅ Backup submit (works on GitHub Pages without CORS issues)
+        const f = document.createElement("form");
+        f.method = "POST";
+        f.action = "https://script.google.com/macros/s/AKfycbzHPzy8FluT2D6EDXTKjGyEuzFkKp6FQhMvOosaT6j8wxTpJs-AYXF9NYj3NLfSg_sP/exec";
 
-  const form = document.getElementById("complaintForm");
+        for (const k in data) {
+          const i = document.createElement("input");
+          i.type = "hidden";
+          i.name = k;
+          i.value = data[k];
+          f.appendChild(i);
+        }
 
-  const data = {
-    full_name: form.querySelector('[name="full_name"]')?.value || "",
-    mobile: form.querySelector('[name="mobile"]')?.value || "",
-    email: form.querySelector('[name="email"]')?.value || "",
-    operator: form.querySelector('[name="operator"]')?.value || "",
-    issue_type: form.querySelector('[name="issue_type"]')?.value || "",
-    state: form.querySelector('[name="state"]')?.value || "",
-    city: form.querySelector('[name="city"]')?.value || "",
-    area: form.querySelector('[name="area"]')?.value || "",
-    pincode: form.querySelector('[name="pincode"]')?.value || "",
-    description: form.querySelector('[name="description"]')?.value || ""
-  };
+        document.body.appendChild(f);
+        f.submit();
 
-  try {
-  await fetch("https://script.google.com/macros/s/AKfycbzHPzy8FluT2D6EDXTKjGyEuzFkKp6FQhMvOosaT6j8wxTpJs-AYXF9NYj3NLfSg_sP/exec", {
-    method: "POST",
-    mode: "no-cors",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data)
-  });
+        // show confirmation page
+        setTimeout(() => { window.location.href = "submitted.html"; }, 1000);
 
-  setTimeout(() => { window.location.href = "submitted.html"; }, 500);
-
-} catch (err) {
-  window.location.href = "submitted.html";
-}
-
-</script>
+      } catch (err) {
+        window.location.href = "submitted.html";
+      }
+    }
+  </script>
 </body>
 </html>
