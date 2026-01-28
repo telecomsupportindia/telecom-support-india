@@ -37,7 +37,6 @@
       padding: 14px;
     }
 
-    /* ✅ Extra bottom padding so form never cuts off behind sticky button */
     .card {
       background: #fff;
       border-radius: 12px;
@@ -93,7 +92,6 @@
       margin-top: 4px;
     }
 
-    /* ✅ Submit button style */
     .btn {
       display: block;
       background: #0b3d91;
@@ -110,8 +108,7 @@
       opacity: 0.9;
     }
 
-    /* ✅ Sticky submit bar (always visible on WhatsApp/Chrome) */
-    .stickyBar{
+    .stickyBar {
       position: fixed;
       bottom: 0;
       left: 0;
@@ -218,7 +215,6 @@
           </select>
         </div>
 
-        <!-- ✅ Sticky submit bar -->
         <div class="stickyBar">
           <button class="btn" type="submit">Submit Complaint</button>
         </div>
@@ -250,10 +246,11 @@
       };
 
       try {
-        // ✅ GitHub Pages compatible submit (no CORS issues)
         const f = document.createElement("form");
         f.method = "POST";
-        f.action = "https://script.google.com/macros/s/AKfycbzttdD76bU9mtjbPB8bftIIDR-jyEKUSKt-uhq1qq0-LN5_59Vg0PIYu4jqnnAyGgA/exec";
+
+        // ✅ FINAL NEW APPS SCRIPT URL (CONNECTED TO NEW SHEET)
+        f.action = "https://script.google.com/macros/s/AKfycbyG8Bxi0FYl8b0K0RH5K-WHTqwGy42FEeXKB31Qwb2g-Z2l1g-hyHTzyWb1SW4SsnY8xw/exec";
 
         for (const k in data) {
           const i = document.createElement("input");
