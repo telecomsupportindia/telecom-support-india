@@ -1,192 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Telecom Support India</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Telecom Support India (TSI)</title>
 
   <style>
-    body{font-family:Arial,sans-serif;margin:0;background:#f5f6fa;color:#1a1a1a}
-
-    header{background:#0b3d91;color:#fff;padding:16px 12px;text-align:center}
-    header h1{margin:0;font-size:22px}
-
-    .container{max-width:980px;margin:16px auto;padding:12px}
-
-    .note{
-      background:#e9f7ef;
-      border:1px solid #c9ebd6;
-      color:#155724;
-      padding:10px 12px;
-      border-radius:12px;
-      font-size:12px;
-      text-align:center;
-      font-weight:700;
-      margin-bottom:14px;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
     }
 
-    .grid{display:grid;grid-template-columns:1fr;gap:14px}
-
-    .card{
-      background:#fff;border-radius:14px;padding:16px;
-      box-shadow:0 2px 10px rgba(0,0,0,.08);
-      border:1px solid #eef1f7;
-      text-align:center;
+    body {
+      background: #f4f6f9;
     }
 
-    .card h3{
-      margin:0 0 12px;
-      color:#0b3d91;
-      font-size:16px;
-      font-weight:800;
+    header {
+      background: #0b5394;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
     }
 
-    .subline{
-      margin-top:10px;
-      font-size:12px;
-      color:#666;
-      font-weight:700;
+    nav {
+      background: #073763;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px;
     }
 
-    .btnSecondary{
-      display:block;width:100%;
-      text-align:center;
-      background:#fff;color:#0b3d91;
-      padding:12px 14px;
-      border-radius:12px;
-      font-weight:800;
-      font-size:15px;
-      border:2px solid #0b3d91;
-      cursor:pointer;
-      text-decoration:none;
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
     }
 
-    .btn{
-      display:block;width:100%;
-      text-align:center;
-      background:#0b3d91;color:#fff;
-      padding:12px 14px;
-      border-radius:12px;
-      font-weight:800;
-      font-size:15px;
-      border:none;
-      cursor:pointer;
-      text-decoration:none;
+    .hero {
+      padding: 30px;
+      text-align: center;
+      background: white;
     }
 
-    input{
-      width:100%;
-      padding:10px;
-      border:1px solid #cfd3dc;
-      border-radius:10px;
-      font-size:14px;
-      box-sizing:border-box;
-      background:#fff;
-      text-align:center;
-      font-weight:700;
+    .hero h1 {
+      color: #0b5394;
+      margin-bottom: 10px;
     }
 
-    footer{
-      text-align:center;
-      padding:16px 12px;
-      font-size:12px;
-      color:#666;
+    .container {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
-    @media(min-width:820px){
-      .grid{grid-template-columns:1fr 1fr 1fr}
+    .card {
+      background: white;
+      margin: 10px;
+      padding: 20px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      text-align: center;
     }
 
-    /* Popup */
-    .modalOverlay{
-      position:fixed;top:0;left:0;width:100%;height:100%;
-      background:rgba(0,0,0,.45);
-      display:none;align-items:center;justify-content:center;
-      z-index:9999;padding:16px;box-sizing:border-box;
+    .card h2 {
+      color: #0b5394;
+      margin-bottom: 10px;
     }
-    .modalBox{
-      background:#fff;width:100%;max-width:420px;
-      border-radius:14px;padding:16px;
-      box-shadow:0 2px 14px rgba(0,0,0,.18);
-      text-align:left;
+
+    .card p {
+      font-size: 14px;
+      margin-bottom: 15px;
     }
-    .modalBox h4{margin:0 0 8px;font-size:16px;color:#0b3d91}
-    .modalBox p{margin:0 0 12px;font-size:13px;color:#333;line-height:1.4}
-    .modalActions{display:flex;gap:10px}
-    .btnGrey{background:#e8ebf3;color:#222}
+
+    button {
+      background: #0b5394;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    button:hover {
+      background: #073763;
+    }
+
+    footer {
+      margin-top: 30px;
+      padding: 15px;
+      text-align: center;
+      font-size: 12px;
+      color: gray;
+    }
   </style>
 </head>
 
 <body>
 
-  <header>
-    <h1>Telecom Support India</h1>
-  </header>
+<header>
+  📡 Telecom Support India (TSI)
+</header>
 
-  <div class="container">
+<nav>
+  <a href="#">Home</a>
+  <a href="#">File Complaint</a>
+  <a href="#">Track</a>
+  <a href="#">Contact</a>
+</nav>
 
-    <div class="note">
-      Working together for stronger telecom connectivity through public participation
-    </div>
+<div class="hero">
+  <h1>Resolve Your Telecom Issues Easily</h1>
+  <p>Fast • Transparent • Reliable Support Platform</p>
+</div>
 
-    <div class="grid">
+<div class="container">
 
-      <!-- Citizen -->
-      <div class="card">
-        <h3>📩 Citizen</h3>
-        <a class="btnSecondary" href="report.html">Submit</a>
-        <div class="subline">No registration required</div>
-      </div>
-
-      <!-- Track -->
-      <div class="card">
-        <h3>🔍 Track Status</h3>
-        <input id="ticketInput" type="text" placeholder="Enter Ticket ID" />
-        <div style="height:10px;"></div>
-        <button class="btnSecondary" onclick="trackTicket()">Check</button>
-      </div>
-
-      <!-- Login -->
-      <div class="card">
-        <h3>🔐 Login</h3>
-        <button class="btn" onclick="openModal()">Login</button>
-        <div class="subline">Registration required (Beta)</div>
-      </div>
-
-    </div>
+  <div class="card">
+    <h2>📄 File Complaint</h2>
+    <p>Submit your telecom issue quickly</p>
+    <button onclick="alert('Complaint system will be added next')">
+      File Complaint
+    </button>
   </div>
 
-  <footer>
-    © Telecom Support India
-  </footer>
-
-  <!-- Popup -->
-  <div class="modalOverlay" id="modalOverlay">
-    <div class="modalBox">
-      <h4>Login Access</h4>
-      <p>Registration will be enabled soon.</p>
-      <div class="modalActions">
-        <button class="btn btnGrey" onclick="closeModal()">Close</button>
-        <button class="btn" onclick="openSignup()">Register</button>
-      </div>
-    </div>
+  <div class="card">
+    <h2>🔍 Track Complaint</h2>
+    <p>Check status using your complaint ID</p>
+    <button onclick="alert('Tracking system will be added next')">
+      Track Status
+    </button>
   </div>
 
-  <script>
-    function openModal(){ document.getElementById("modalOverlay").style.display="flex"; }
-    function closeModal(){ document.getElementById("modalOverlay").style.display="none"; }
+  <div class="card">
+    <h2>☎ Contact Support</h2>
+    <p>Email: support@tsi.gov.in</p>
+    <p>Response within 24–48 hours</p>
+  </div>
 
-    function openSignup(){
-      alert("Registration will be enabled soon.");
-      closeModal();
-    }
+</div>
 
-    function trackTicket(){
-      const t = document.getElementById("ticketInput").value.trim();
-      if(!t){ alert("Please enter Ticket ID."); return; }
-      alert("Tracking request received for: " + t);
-    }
-  </script>
+<footer>
+  © 2026 Telecom Support India | All Rights Reserved
+</footer>
 
 </body>
 </html>
