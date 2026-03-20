@@ -1,116 +1,72 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Telecom Support India (TSI)</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Telecom Support India (TSI)</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f4f6f9;
-      text-align: center;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #f4f6f9;
+  text-align: center;
+}
 
-    header {
-      background: #0b5394;
-      color: white;
-      padding: 15px;
-    }
+header {
+  background: #0b5394;
+  color: white;
+  padding: 20px;
+}
 
-    header img {
-      height: 50px;
-      display: block;
-      margin: 0 auto 10px;
-    }
+header img {
+  height: 60px;
+}
 
-    header h1 {
-      margin: 0;
-      font-size: 22px;
-    }
+h1 {
+  margin-top: 10px;
+}
 
-    .container {
-      padding: 20px;
-    }
+.container {
+  margin-top: 40px;
+}
 
-    .card {
-      background: white;
-      margin: 15px auto;
-      padding: 20px;
-      border-radius: 10px;
-      width: 90%;
-      max-width: 400px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
+button {
+  display: block;
+  width: 80%;
+  max-width: 300px;
+  margin: 15px auto;
+  padding: 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  background: #0b5394;
+  color: white;
+  cursor: pointer;
+}
 
-    .card h2 {
-      color: #0b5394;
-    }
-
-    button {
-      background: #0b5394;
-      color: white;
-      border: none;
-      padding: 12px 20px;
-      margin-top: 10px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 15px;
-      width: 100%;
-    }
-
-    button:hover {
-      background: #073763;
-    }
-
-    footer {
-      margin-top: 30px;
-      padding: 15px;
-      font-size: 12px;
-      color: gray;
-    }
-  </style>
+button:hover {
+  background: #073763;
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <!-- 🔻 IRRS LOGO (Replace link if needed) -->
-  <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Emblem_of_India.svg" alt="IRRS Logo">
-  
+  <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Emblem_of_India.svg">
   <h1>Telecom Support India (TSI)</h1>
 </header>
 
 <div class="container">
+  <button onclick="location.href='complaint.html'">
+    📄 Report Complaint
+  </button>
 
-  <div class="card">
-    <h2>📄 Report Complaint</h2>
-    <p>Submit your telecom issue here</p>
-    <button onclick="alert('Complaint system coming next')">
-      Report Complaint
-    </button>
-  </div>
-
-  <div class="card">
-    <h2>🔍 Track Complaint</h2>
-    <p>Check your complaint status</p>
-    <button onclick="alert('Tracking system coming next')">
-      Track Status
-    </button>
-  </div>
-
-  <div class="card">
-    <h2>☎ Contact Support</h2>
-    <p>Email: support@tsi.gov.in</p>
-  </div>
-
+  <button onclick="location.href='track.html'">
+    🔍 Track Complaint
+  </button>
 </div>
-
-<footer>
-  © 2026 Telecom Support India
-</footer>
 
 </body>
 </html>
