@@ -1,71 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Telecom Support India (TSI)</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TSI - File Complaint</title>
 
-<style>
-body {
-  margin: 0;
-  font-family: Arial;
-  background: #f4f6f9;
-  text-align: center;
-}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            margin: 0;
+            padding: 0;
+        }
 
-header {
-  background: #0b5394;
-  color: white;
-  padding: 20px;
-}
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
 
-header img {
-  height: 60px;
-}
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+        }
 
-h1 {
-  margin-top: 10px;
-}
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+        }
 
-.container {
-  margin-top: 40px;
-}
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
 
-button {
-  display: block;
-  width: 80%;
-  max-width: 300px;
-  margin: 15px auto;
-  padding: 15px;
-  font-size: 16px;
-  border: none;
-  border-radius: 6px;
-  background: #0b5394;
-  color: white;
-  cursor: pointer;
-}
+        textarea {
+            resize: none;
+            height: 100px;
+        }
 
-button:hover {
-  background: #073763;
-}
-</style>
+        .payment-section {
+            margin-top: 25px;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        .payment-icons {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 10px;
+        }
+
+        .payment-icons span {
+            background: #eee;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            background: grey;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: not-allowed;
+            font-size: 16px;
+        }
+
+        .disclaimer {
+            margin-top: 15px;
+            font-size: 13px;
+            color: #555;
+            background: #fff3cd;
+            padding: 10px;
+            border-radius: 6px;
+        }
+
+        .submit-btn {
+            background: #2ecc71;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
 
-<header>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Emblem_of_India.svg">
-  <h1>Telecom Support India (TSI)</h1>
-</header>
-
 <div class="container">
-  <button onclick="location.href='complaint.html'">
-    📄 Report Complaint
-  </button>
+    <h2>TSI - File a Complaint</h2>
 
-  <button onclick="location.href='track.html'">
-    🔍 Track Complaint
-  </button>
+    <form>
+        <label>Name</label>
+        <input type="text" placeholder="Enter your name" required>
+
+        <label>Mobile Number</label>
+        <input type="tel" placeholder="Enter your mobile number" required>
+
+        <label>Complaint Details</label>
+        <textarea placeholder="Describe your issue..." required></textarea>
+
+        <div class="payment-section">
+            <h3>₹1 Verification Fee</h3>
+
+            <div class="payment-icons">
+                <span>UPI</span>
+                <span>Paytm</span>
+                <span>Google Pay</span>
+                <span>PhonePe</span>
+            </div>
+
+            <button class="btn" disabled>
+                Proceed to Payment (Coming Soon)
+            </button>
+
+            <div class="disclaimer">
+                ⚠️ <b>Important Notice:</b><br><br>
+                The ₹1 complaint verification fee system is currently under development and not active.<br><br>
+                No payment is being collected at this time. The payment options shown above are for demonstration purposes only.<br><br>
+                Once activated, all collected fees are planned to be utilized towards supporting the education of underprivileged children.
+            </div>
+        </div>
+
+        <button type="submit" class="btn submit-btn">
+            Submit Complaint
+        </button>
+    </form>
 </div>
 
 </body>
